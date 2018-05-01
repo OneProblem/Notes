@@ -1,0 +1,42 @@
+goal - install ubuntu os which can co-exist with win8 in my pc environment.
+
+I know how to do it in virtual-box, but that does not fully use the GPU I have for my pc.
+If I can install a physical ubuntu, maybe it can use GPU in ubuntu env.
+
+1.Allocate a free disk
+control panel -> system and security -> administrative tools -> computer management
+storage -> disk management
+shrink existing disk and make some space as unknow (step3 when installing ubuntu
+
+2.Create Ubuntu xx.xx disk based on the ISO file
+
+3.Start with hard-disk boot
+Choose an option -> Troubleshoot -> Advanced options -> UEFI Firmware Settings
+
+4.Install Ubuntu xx.xx
+Reserved BIOS boot area
+/
+/home
+
+5.Installation in Ubuntu
+a)nvidia driver for GPU
+sudo add-apt-repository ppa:graphics-drivers
+sudo apt-get update
+sudo apt-get install nvidia-390
+lsmod | grep nvidia
+sudo apt-mark hold nvidia-390
+
+b)grub menu
+sudo update-grub
+
+Reference
+1. The Ultimate Windows 7 and Ubuntu Linux Dual Boot Guide
+https://www.lifewire.com/ultimate-windows-7-ubuntu-linux-dual-boot-guide-2200653
+2. How to Open Disk Management
+https://www.lifewire.com/how-to-open-disk-management-2626080
+3. How to Install Ubuntu 16.10/16.04 Alongside With Windows 10 or 8 in Dual-Boot
+https://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/
+4. [How To] Install Latest NVIDIA Drivers In Linux
+http://www.linuxandubuntu.com/home/how-to-install-latest-nvidia-drivers-in-linux
+5. grub menu
+https://askubuntu.com/questions/450185/lost-windows-7-in-grub-after-installing-ubuntu-14-04
