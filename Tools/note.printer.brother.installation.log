@@ -1,0 +1,6 @@
+Install Brother HL-2280DW
+1. download linux printer driver from here,
+http://support.brother.com/g/b/downloadend.aspx?c=us&lang=en&prod=hl2280dw_us&os=127&dlid=dlf006893_000&flang=4&type3=625
+2. run this command
+sudo bash linux-brprinter-installer-2.2.0-1 HL-2280DW
+
