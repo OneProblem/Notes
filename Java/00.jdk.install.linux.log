@@ -1,0 +1,23 @@
+zbhuang@zbhuang-XPS-8500:~$ cd /usr/local
+zbhuang@zbhuang-XPS-8500:/usr/local$ sudo mkdir java
+zbhuang@zbhuang-XPS-8500:/usr/local$ sudo cp /home/zbhuang/Projects/tools/jdk-8u172-linux-x64.tar.gz ./java
+zbhuang@zbhuang-XPS-8500:/usr/local$ cd java
+zbhuang@zbhuang-XPS-8500:/usr/local/java$ sudo gunzip jdk-8u172-linux-x64.tar.gz 
+zbhuang@zbhuang-XPS-8500:/usr/local/java$ sudo tar -xf jdk-8u172-linux-x64.tar 
+zbhuang@zbhuang-XPS-8500:/usr/local/java$ sudo rm jdk-8u172-linux-x64.tar 
+zbhuang@zbhuang-XPS-8500:/usr/local/java$ cd jdk1.8.0_172/
+zbhuang@zbhuang-XPS-8500:/usr/local/java/jdk1.8.0_172$ pwd
+/usr/local/java/jdk1.8.0_172
+zbhuang@zbhuang-XPS-8500:/usr/local/java/jdk1.8.0_172$ sudo gedit /etc/profile
+
+export JAVA_HOME=/usr/local/java/jdk1.8.0_172
+export JRE_HOME=/usr/local/java/jdk1.8.0_172/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH
+
+zbhuang@zbhuang-XPS-8500:/usr/local/java/jdk1.8.0_172$ source /etc/profile
+zbhuang@zbhuang-XPS-8500:/usr/local/java/jdk1.8.0_172$ java -version
+java version "1.8.0_172"
+Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
+zbhuang@zbhuang-XPS-8500:/usr/local/java/jdk1.8.0_172$ 
